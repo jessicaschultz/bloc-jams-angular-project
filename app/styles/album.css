@@ -1,11 +1,9 @@
 .album-view-details {
   position: relative;
   top: 1.5rem;
+  left: 3rem;
   padding: 1rem;
-/*border added for editing.*/
-  border: dashed;
-/*  float:right;*/
-/*  margin: auto;*/
+  text-align: left;
 }
 
 .album-view-details .album-view-title {
