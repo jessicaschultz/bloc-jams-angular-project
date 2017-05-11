@@ -58,7 +58,7 @@
     *@desc current buzz object audio file playing
     *@type {object} songs audio file
     **/
-    SongPlayer.currentSong = null;
+//    SongPlayer.currentSong = null;
     /**
     *@function play
     *@desc Play current or new song
