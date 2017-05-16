@@ -24,19 +24,13 @@
              <h3 class="artist-name">{{playerBar.albumData.artist}}</h3>
              <div class="seek-control">
                  <seek-bar value="{{playerBar.songPlayer.currentTime}}" max="{{playerBar.songPlayer.currentSong.duration}}" on-change="playerBar.songPlayer.setCurrentTime(value)"></seek-bar>
-                 <div class="current-time"></div>
+                 <div class="current-time">{{playerBar.songPlayer.currentTime}}</div>
                  <div class="total-time">{{album.songPlayer.currentSong.duration}}</div>
              </div>
          </div>
          <div class="control-group volume">
              <span class="icon ion-volume-high"></span>
-             <seek-bar></seek-bar>
+             <seek-bar value="{{playerBar.songPlayer.currentVolume}}" max="100" on-change="playerBar.songPlayer.setCurrentVolume(value)"></seek-bar>
          </div>
      </div>
  </section>
-
-<!--Thoughts/questions:
--having trouble inserting artist-name in playerbar.currently as is, artist name is automatically inserted into playerbar even without anything playing. 
--same problem with inserting artist-song-mobile.
-
--what is album.albumData? where is it pulling the info from and where was it created? If the album is referencing Fixtures album objects, is albumData all the properties in each album object? when did we create the albumData property to access this info from? *update* is albumData created in the Ctrl's.js? -->

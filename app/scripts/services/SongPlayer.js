@@ -32,6 +32,12 @@
         });
       });
       
+      currentBuzzObject.bind('volumechange', function(){
+        $rootScope.$apply(function(){
+            SongPlayer.currentVolume = currentBuzzObject.getVolume();
+        });
+      });
+      
       SongPlayer.currentSong = songs;
     };
     /**
@@ -70,6 +76,10 @@
     *@type {number}
     */
     SongPlayer.currentTime = null;
+    /*@desc current vol of currently playing song
+    *@type {number}
+    */
+    SongPlayer.currentVolume = 80;
     /**
     *@function play
     *@desc Play current or new song
@@ -123,6 +133,18 @@
         currentBuzzObject.setTime(time);
       }
     };
+    
+    /*
+    *@function setVolume
+    *@desc set current volume of currently playing song
+    *@param {number} volume
+    */
+    SongPlayer.setCurrentVolume = function(volume){
+      if(currentBuzzObject){
+        currentBuzzObject.setVolume(volume);
+      }
+    };
+    
     /*
     *@function previous
     *@desc go to previous song (get's current song index--).
